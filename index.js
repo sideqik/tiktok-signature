@@ -120,7 +120,7 @@ class Signer {
   async sign(link) {
     // generate valid verifyFp
     let verify_fp = Utils.generateVerifyFp();
-    let newUrl = link + "&verifyFp=" + verify_fp;
+    let newUrl = link;
     let token = await this.page.evaluate(`generateSignature("${newUrl}")`);
     let signed_url = newUrl + "&_signature=" + token;
     let queryString = new URL(signed_url).searchParams.toString();
