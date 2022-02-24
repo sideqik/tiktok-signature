@@ -105,11 +105,14 @@ class Signer {
     const info = await this.page.evaluate(() => {
       return {
         deviceScaleFactor: window.devicePixelRatio,
-        user_agent: window.navigator.userAgent,
-        browser_language: window.navigator.language,
-        browser_platform: window.navigator.platform,
-        browser_name: window.navigator.appCodeName,
-        browser_version: window.navigator.appVersion,
+        user_agent:        window.navigator.userAgent,
+        browser_language:  window.navigator.language,
+        browser_platform:  window.navigator.platform,
+        browser_name:      window.navigator.appCodeName,
+        browser_version:   window.navigator.appVersion,
+        screen_width:      window.screen.width,
+        screen_height:     window.screen.height,
+        history_length:    history.length
       };
     });
     return info;
