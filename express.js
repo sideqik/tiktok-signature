@@ -26,7 +26,8 @@ app.get('/sign', async (req, res) => {
           verify_fp: sign.verify_fp,
           signed_url: sign.signed_url,
           navigator: navigator,
-          "x-tt-params": sign.x_tt_params,
+          "x-tt-params": sign['x-tt-params'],
+          "x-bogus": sign['x-bogus'],
         },
       };
 
